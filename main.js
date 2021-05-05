@@ -4,10 +4,11 @@ block_image_height = 30;
 var player_x = 10;
 var player_y = 10;
 var player_object = "";
+var block_image_object = "";
 
 function player_update()
 {
-    fabric.Image.fromURL("player.png", function(Img)
+    fabric.Image.fromURL("Capture.png", function(Img)
     {
         player_object = Img;
 
@@ -116,5 +117,53 @@ function my_keydown(e)
     {
         right();
         console.log("right");
+    }
+}
+
+function up()
+{
+    if (player_y >= 0)
+    {
+    player_y = player_y - block_image_height;
+    console.log("block image height = " + block_image_height);
+    console.log("when Up arrow key is pressed, X = " + player_x + " , y = " + player_y);
+    canvas.remove(player_object);
+    player_update();
+    }
+}
+
+function down()
+{
+    if (player_y <= 900)
+    {
+    player_y = player_y + block_image_height;
+    console.log("block image height = " + block_image_height);
+    console.log("when down arrow key is pressed, X = " + player_x + " , y = " + player_y);
+    canvas.remove(player_object);
+    player_update();
+    }
+}
+
+function left()
+{
+    if (player_x > 0)
+    {
+    player_x = player_x - block_image_width;
+    console.log("block image width = " + block_image_width);
+    console.log("when left arrow key is pressed, X = " + player_x + " , y = " + player_y);
+    canvas.remove(player_object);
+    player_update();
+    }
+}
+
+function right()
+{
+    if (player_x <= 2850)
+    {
+    player_x = player_x + block_image_width;
+    console.log("block image width = " + block_image_width);
+    console.log("when right arrow key is pressed, X = " + player_x + " , y = " + player_y);
+    canvas.remove(player_object);
+    player_update();
     }
 }
