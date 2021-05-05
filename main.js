@@ -12,8 +12,8 @@ function player_update()
     {
         player_object = Img;
 
-        player_object.scaleToWidth(150);
-        player_object.scaleToHeight(140);
+        player_object.scaleToWidth(block_image_width);
+        player_object.scaleToHeight(block_image_height);
         player_object.set({
             top:player_y,
             left:player_x
